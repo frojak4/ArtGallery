@@ -1,0 +1,13 @@
+
+
+
+https://collectionapi.metmuseum.org/public/collection/v1/search?q=SEARCH_PARAM
+
+
+Todo
+1. Appen skal ha 1 'main' side
+2. Skal vere ein client-side søkebar på toppen
+3. Når brukeren søker brukest det ein util funksjon som tar imot id'ene
+4. Disse ID'ene passest videre til ein container som rendrer 1 component for kvert bilde
+5. Disse componentsa bruker id'en og finner bilde (lastest 1 og 1 med suspense)
+6. Bildene kan trykkest på, og da åpnest ei ny side med id som parameter.
