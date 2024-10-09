@@ -1,5 +1,5 @@
 import { getIDsfromSearch } from '@/utils/utils'
-import React from 'react'
+import React, { Suspense } from 'react'
 import GalleryItem from './GalleryItem'
 
 type DataType = number[] | null
@@ -12,15 +12,18 @@ const SearchResults = async ({searchParams}: {searchParams : {query?: string}}) 
 
     if (query){
         data = await getIDsfromSearch(query)
+        console.log(query)
     }
 
-    console.log(data)
+    
 
   return (
     
-    <div className="w-5/6 flex flex-col items-center bg-gray-800 mt-2 max-h-screen">
+    <div className="w-5/6 flex flex-wrap items-center justify-center bg-gray-800 mt-2 max-h-screen overflow-auto">
         {data && data.map((id, i) => {
-        return <GalleryItem key={i} id={id}/>
+        return  <Suspense key={i} fallback={<p>Loading</p>}> 
+        <GalleryItem key={i} id={id}/> 
+        </Suspense>
         })}
     </div>
     

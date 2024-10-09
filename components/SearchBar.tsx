@@ -16,7 +16,7 @@ const SearchBar = () => {
 
     const handleSubmit = (e: React.FormEvent) => {
       e.preventDefault()
-      router.push(`/?query=${encodeURIComponent(query)}`)
+      router.push(`/?query=${query}`)
     }
   
     return (
